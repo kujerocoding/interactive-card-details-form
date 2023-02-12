@@ -1,9 +1,10 @@
 import React from 'react'
+import CardForm from './CardForm'
 
 const App = () => {
   return (
     <div>
-      Card Details form
+      <CardForm />
     </div>
   )
 }
