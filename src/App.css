@@ -77,10 +77,17 @@ form > input, form > div> input, button{
     font-family: inherit;
     border: 1px solid var(--LIGHTGRAYISHVIOLET);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 form > input::placeholder, form > div > input::placeholder{
     color: var(--LIGHTGRAYISHVIOLET);
+}
+
+form > input:focus, form > div> input:focus{
+    border-color: var(--VERYDARKVIOLET);
+    outline-offset: 0px;
+    outline: none;
 }
 
 
