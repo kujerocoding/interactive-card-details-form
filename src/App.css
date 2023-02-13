@@ -19,6 +19,13 @@ body{
     font-family: var(--FF);
 }
 
+/* .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
 .card--container{
     background-image: url('./assets/images/bg-main-mobile.png');
     min-width: 100px;
@@ -97,6 +104,7 @@ body{
     align-items: center;
     padding-inline: 20px;
     width: 70%;
+    margin-inline: auto;
 }
 
 form{
@@ -169,7 +177,7 @@ button{
 
 @media (min-width: 40em){
     .main--container{
-        display: flex;
+       display: flex;
     }
 
     .card--container{
@@ -178,8 +186,8 @@ button{
        min-height: 100vh;
     }
 
-    .card--front, .card--back{
-        transform: scale(140%);
+    .card--front, .card--back{  
+        transform: scale(1.4);
     }
 
     .card--front{
@@ -192,7 +200,7 @@ button{
         left: 100px;
     }
 
-    form{
-        margin: 0;
+    form, .card--added{
+        margin-top: 0;
     }
 }
