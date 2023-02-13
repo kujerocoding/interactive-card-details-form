@@ -3,6 +3,8 @@ import { useState } from 'react'
 
 const CardForm = () => {
 
+  const [isCardAdded, setIsCardAdded] = useState(false)
+
   const [formData, setFormData] = useState({
     cardName: "Jane Appleseed",
     cardNumber: "1234 5678 9123 0000",
@@ -21,8 +23,11 @@ const CardForm = () => {
     })
   }
 
+  function handleSubmit(e){
+    e.preventDefault()
+    setIsCardAdded(prevState => !prevState)
+  }
 
-  //console.log(formData)
 
 
   return (
@@ -40,7 +45,12 @@ const CardForm = () => {
         </div>
       </div>
       <div className='form--container'>
-        <form>
+        <div className='card--added'>
+          <img src="./src/assets/images/icon-complete.svg" alt="complete icon" />
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+        </div>
+        <form onSubmit={handleSubmit}>
               <label htmlFor="cardName">CARDHOLDER NAME</label>
               <input className="card--name"
               name='cardName'  
@@ -76,8 +86,9 @@ const CardForm = () => {
                 placeholder='e.g. 123'
                 onChange={handleChange}/>
                 </div>  
-              <button>Confirm</button>
+              
         </form>
+        <button>Confirm</button>
       </div>
     </>
   )

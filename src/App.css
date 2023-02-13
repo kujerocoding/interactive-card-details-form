@@ -86,8 +86,10 @@ body{
 
 .form--container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-inline: 20px;
 }
 
 form{
@@ -96,6 +98,7 @@ form{
     flex-direction: column;
     gap: 20px;
     width: 335px;
+    margin-bottom: 30px;
 }
 
 form > label{
@@ -126,6 +129,7 @@ button{
     background-color: var(--VERYDARKVIOLET);
     color: var(--LIGHTGRAYISHVIOLET);
     border: 1px solid transparent;
+    width: 100%;
 }
 
 .form--lower{
@@ -142,3 +146,20 @@ button{
     width: 100%;
 }
 
+.card--added{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--DARKGRAYISHGVIOLET);
+}
+
+.card--added > h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--VERYDARKVIOLET);
+}
+
+form{
+    display: none;
+}
