@@ -12,7 +12,7 @@ const CardForm = () => {
             </div>
         </div>
       </div>
-      <div>
+      <div className='form--container'>
         <form>
               <label htmlFor="name">Name</label>
               <input id="name" type="text" />
