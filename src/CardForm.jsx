@@ -1,19 +1,19 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState} from 'react'
 
 const CardForm = () => {
 
-  const [isCardAdded, setIsCardAdded] = useState(false)
-
-  const [formData, setFormData] = useState({
+  const defaultCardValue = {
     cardName: "Jane Appleseed",
     cardNumber: "1234 5678 9123 0000",
     expDateMonth: "01",
     expDateYear: 2001,
     cvc: 123
-  })
+  }
 
+  const [isCardAdded, setIsCardAdded] = useState(false)
 
+  const [formData, setFormData] = useState(defaultCardValue)
 
   function handleChange(e) {
     const {name, value} = e.target
@@ -25,10 +25,16 @@ const CardForm = () => {
     })
   }
 
-  function handleSubmit(e){
+  function handleConfirm(e){
     e.preventDefault()
     console.log('shit')
     setIsCardAdded(prevState => !prevState)
+  }
+
+  function handleContinue(e){
+    e.preventDefault()
+    setIsCardAdded(prevState => !prevState)
+    setFormData(defaultCardValue)
   }
 
   const cardForm = (
@@ -95,7 +101,7 @@ const CardForm = () => {
       </div>
       <div className='form--container'>
         {isCardAdded ? cardAdded : cardForm}
-        <button type='submit' form='cardForm' onClick={handleSubmit}>{isCardAdded ? "Continue" : "Confirm"}</button>
+        <button type='submit' form='cardForm' onClick={isCardAdded ? handleContinue : handleConfirm}>{isCardAdded ? "Continue" : "Confirm"}</button>
       </div>
     </>
   )
