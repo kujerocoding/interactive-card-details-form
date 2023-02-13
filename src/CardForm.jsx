@@ -13,6 +13,8 @@ const CardForm = () => {
     cvc: 123
   })
 
+
+
   function handleChange(e) {
     const {name, value} = e.target
     setFormData(prevFormData => {
@@ -25,32 +27,12 @@ const CardForm = () => {
 
   function handleSubmit(e){
     e.preventDefault()
+    console.log('shit')
     setIsCardAdded(prevState => !prevState)
   }
 
-
-
-  return (
-    <>
-      <div className='card--container'>
-        <div className='center'>
-            <div className='card--front'>
-                <img src="./src/assets/images/card-logo.svg" alt="" />
-                <h4>{formData.cardNumber}</h4>
-                <p>{formData.cardName}<span>{formData.expDateMonth}/{formData.expDateYear}</span></p>
-            </div>
-            <div className='card--back'>
-              <p>{formData.cvc}</p>
-            </div>
-        </div>
-      </div>
-      <div className='form--container'>
-        <div className='card--added'>
-          <img src="./src/assets/images/icon-complete.svg" alt="complete icon" />
-          <h1>Thank you!</h1>
-          <p>We've added your card details</p>
-        </div>
-        <form onSubmit={handleSubmit}>
+  const cardForm = (
+    <form id="cardForm">
               <label htmlFor="cardName">CARDHOLDER NAME</label>
               <input className="card--name"
               name='cardName'  
@@ -85,10 +67,35 @@ const CardForm = () => {
                 type="number" 
                 placeholder='e.g. 123'
                 onChange={handleChange}/>
-                </div>  
-              
+                </div>     
         </form>
-        <button>Confirm</button>
+  )
+
+  const cardAdded = (
+    <div className='card--added'>
+          <img src="./src/assets/images/icon-complete.svg" alt="complete icon" />
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+        </div>
+  )
+
+  return (
+    <>
+      <div className='card--container'>
+        <div className='center'>
+            <div className='card--front'>
+                <img src="./src/assets/images/card-logo.svg" alt="" />
+                <h4>{formData.cardNumber}</h4>
+                <p>{formData.cardName}<span>{formData.expDateMonth}/{formData.expDateYear}</span></p>
+            </div>
+            <div className='card--back'>
+              <p>{formData.cvc}</p>
+            </div>
+        </div>
+      </div>
+      <div className='form--container'>
+        {isCardAdded ? cardAdded : cardForm}
+        <button type='submit' form='cardForm' onClick={handleSubmit}>{isCardAdded ? "Continue" : "Confirm"}</button>
       </div>
     </>
   )
