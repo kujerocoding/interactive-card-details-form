@@ -26,6 +26,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .center{
@@ -40,6 +43,9 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     color: var(--LIGHTGRAYISHVIOLET);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .card--front{
@@ -90,6 +96,7 @@ body{
     justify-content: center;
     align-items: center;
     padding-inline: 20px;
+    width: 70%;
 }
 
 form{
@@ -129,7 +136,7 @@ button{
     background-color: var(--VERYDARKVIOLET);
     color: var(--LIGHTGRAYISHVIOLET);
     border: 1px solid transparent;
-    width: 100%;
+    width: 335px;
 }
 
 .form--lower{
@@ -160,4 +167,32 @@ button{
     color: var(--VERYDARKVIOLET);
 }
 
+@media (min-width: 40em){
+    .main--container{
+        display: flex;
+    }
 
+    .card--container{
+        background-image: url('./assets/images/bg-main-desktop.png');
+       width: 30%;
+       min-height: 100vh;
+    }
+
+    .card--front, .card--back{
+        transform: scale(140%);
+    }
+
+    .card--front{
+        top: -200px;
+        left: 0px;
+    }
+
+    .card--back{
+        top: 40px;
+        left: 100px;
+    }
+
+    form{
+        margin: 0;
+    }
+}
