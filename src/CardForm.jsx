@@ -14,14 +14,14 @@ const CardForm = () => {
       <div className='form--container'>
         <form>
               <label htmlFor="name">CARDHOLDER NAME</label>
-              <input id="name" type="text" />
+              <input className="card--name" id="name" type="text" placeholder='e.g. Jane Appleseed'/>
               <label htmlFor="name">CARD NUMBER</label>
-              <input id="cardNumber" type="number" />
+              <input className="card--number"  id="cardNumber" type="number" placeholder='e.g. 1234 5678 9123 0000'/>
               <label htmlFor="cvc">EXP. DATE (MM/YY) &emsp;<span>CVC</span></label>
-                <div>
-                <input className="form--month" id="month" type="number" />
-                <input className="form--year" id="year" type="number" />
-                <input className="form--cvc" id="cvc"type="number" />
+                <div className='form--lower'>
+                <input className="form--month" id="month" type="number" placeholder='MM' />
+                <input className="form--year" id="year" type="number" placeholder='YY'/>
+                <input className="form--cvc" id="cvc"type="number" placeholder='e.g. 123'/>
                 </div>  
               <button>Confirm</button>
         </form>

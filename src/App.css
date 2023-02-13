@@ -10,7 +10,7 @@
     --FF: 'Space Grotesk', sans-serif;
     --FS: 18px;
     --LIGHTGRAYISHVIOLET: hsl(270, 3%, 87%);
-    --DARKGRAYISNGVIOLET: hsl(279, 6%, 55%);
+    --DARKGRAYISHGVIOLET: hsl(279, 6%, 55%);
     --VERYDARKVIOLET: hsl(278, 68%, 11%);
 }
 
@@ -53,13 +53,54 @@ body{
     left: -110px;
 }
 
+.form--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 form{
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 335px;
 }
 
-button{
-    font-family: inherit;
+form > label{
+    color: var(--VERYDARKVIOLET);
 }
+
+form > input, form > div> input, button{
+    font-size: inherit;
+    padding: 10px;
+    font-family: inherit;
+    border: 1px solid var(--LIGHTGRAYISHVIOLET);
+    border-radius: 5px;
+}
+
+form > input::placeholder, form > div > input::placeholder{
+    color: var(--LIGHTGRAYISHVIOLET);
+}
+
+
+button{
+    background-color: var(--VERYDARKVIOLET);
+    color: var(--LIGHTGRAYISHVIOLET);
+    border: 1px solid transparent;
+}
+
+.form--lower{
+    display: flex;
+    gap: 10px;
+    
+}
+
+.form--month, .form--year{
+    width: 70px;
+}
+
+.form--cvc{
+    width: 100%;
+}
+
