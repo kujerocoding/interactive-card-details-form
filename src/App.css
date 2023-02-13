@@ -19,6 +19,47 @@ body{
     font-family: var(--FF);
 }
 
+.card--container{
+    background-image: url('./assets/images/bg-main-mobile.png');
+    min-width: 100px;
+    min-height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center{
+    position: relative;
+}
+
+.card--front, .card--back{
+    width: 280px;
+    height: 155px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card--front{
+    background-image: url('./assets/images/bg-card-front.png');
+    bottom: -160px;
+    left: -170px;
+    z-index: 1;
+}
+
+.card--back{
+    background-image: url('./assets/images/bg-card-back.png');
+    top: -90px;
+    left: -110px;
+}
+
+form{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 button{
     font-family: inherit;
 }
