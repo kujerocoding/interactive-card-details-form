@@ -33,11 +33,13 @@ body{
 }
 
 .card--front, .card--back{
+    padding: 20px;
     width: 280px;
     height: 155px;
     position: absolute;
     background-repeat: no-repeat;
     background-size: contain;
+    color: var(--LIGHTGRAYISHVIOLET);
 }
 
 .card--front{
@@ -47,10 +49,39 @@ body{
     z-index: 1;
 }
 
+.card--front > img{
+    width: 50px;
+    object-fit: cover;
+}
+
+.card--front > h4{
+    font-weight: lighter;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    letter-spacing: .1rem;
+}
+
+.card--front > p {
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.card--front > p > span{
+    position: absolute;
+    right: 20px;
+}
+
 .card--back{
     background-image: url('./assets/images/bg-card-back.png');
     top: -90px;
     left: -110px;
+}
+
+.card--back > p {
+    font-size: .8rem;
+    position: absolute;
+    right: 35px;
+    top: 67px;
 }
 
 .form--container{

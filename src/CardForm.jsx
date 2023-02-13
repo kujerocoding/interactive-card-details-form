@@ -6,8 +6,12 @@ const CardForm = () => {
       <div className='card--container'>
         <div className='center'>
             <div className='card--front'>
+                <img src="./src/assets/images/card-logo.svg" alt="" />
+                <h4>0000 0000 0000 0000</h4>
+                <p>Jane Appleseed<span>00/00</span></p>
             </div>
             <div className='card--back'>
+              <p>000</p>
             </div>
         </div>
       </div>
