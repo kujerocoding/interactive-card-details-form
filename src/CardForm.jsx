@@ -41,29 +41,31 @@ const CardForm = () => {
       </div>
       <div className='form--container'>
         <form>
-              <label htmlFor="name">CARDHOLDER NAME</label>
+              <label htmlFor="cardName">CARDHOLDER NAME</label>
               <input className="card--name"
               name='cardName'  
+              id='cardName'  
               type="text" 
               placeholder='e.g. Jane Appleseed'
               onChange={handleChange}/>
-              <label htmlFor="name">CARD NUMBER</label>
+              <label htmlFor="cardNumber">CARD NUMBER</label>
               <input className="card--number"  
               name="cardNumber" 
+              id="cardNumber" 
               type="number" 
               placeholder='e.g. 1234 5678 9123 0000'
               onChange={handleChange}/>
-              <label htmlFor="cvc">EXP. DATE (MM/YY) &emsp;<span>CVC</span></label>
+              <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp;<span>
+                <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
                 <input className="form--month" 
                 name="expDateMonth"
-                id="month" 
+                id="expDateMonth" 
                 type="number" 
                 placeholder='MM' 
                 onChange={handleChange}/>
                 <input className="form--year" 
-                name="expDateYear"
-                id="year" 
+                name="expDateYear" 
                 type="number" 
                 placeholder='YY'
                 onChange={handleChange}/>
