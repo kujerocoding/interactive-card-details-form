@@ -180,6 +180,11 @@ button{
     color: red;
 }
 
+.month-cvc--message--container{
+    display: flex;
+    gap: 60px;
+}
+
 @media (min-width: 40em){
     .main--container{
        display: flex;

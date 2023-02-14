@@ -43,13 +43,26 @@ const CardForm = () => {
   const isCardNumberValid = regexCardNumber.test(formData.cardNumber)
   const isCvcValid = regexCvc.test(formData.cvc)
 
-  console.log(isCvcValid)
+  //console.log(isCardNumberValid)
 
   const style = {
     border: isCardNumberValid ?  '1px solid #dedddf' : '1px solid red'
   }
 
  /*  const errorMessage = !isCardNumberValid && <p className='error--message'>Can't be blank</p> */
+
+
+ //const shit = formData.map(item => item.cardNumber)
+
+ //console.log(shit)
+
+ /* for(const data in formData){
+  console.log(formData[data])
+ } */
+
+ console.log(formData.cardName)
+
+
 
   const cardForm = (
     <form id="cardForm">
@@ -61,6 +74,7 @@ const CardForm = () => {
                 placeholder='e.g. Jane Appleseed'
                 onChange={handleChange}
                 />
+                {formData.cardName === "" && <p className='error--message'>Can't be blank</p>}
               <label htmlFor="cardNumber">CARD NUMBER</label>
                 <input className="card--number"  
                 name="cardNumber" 
@@ -71,9 +85,11 @@ const CardForm = () => {
                 maxLength={19}
                 style={style}/>
                 {!isCardNumberValid && <p className='error--message'>Wrong format, numbers only</p>}
+                {formData.cardNumber === "" && <p className='error--message'>Can't be blank</p>}
               <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp;<span>
                 <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
+                  
                   <input className="form--month" 
                   name="expDateMonth"
                   id="expDateMonth" 
@@ -81,6 +97,7 @@ const CardForm = () => {
                   maxLength={2} 
                   placeholder='MM' 
                   onChange={handleChange}/>
+                  
                   <input className="form--year" 
                   name="expDateYear" 
                   type="tel" 
@@ -94,7 +111,12 @@ const CardForm = () => {
                   maxLength={3}
                   placeholder='e.g. 123'
                   onChange={handleChange}/>
-                </div>     
+                  
+                </div>
+                <div className='month-cvc--message--container'>
+                  {formData.expDateMonth === "" && <p className='error--message'>Can't be blank</p>}   
+                  {formData.cvc === "" && <p className='error--message'>Can't be blank</p>} 
+                </div> 
         </form>
   )
 
