@@ -28,9 +28,9 @@ const CardForm = () => {
 
   function handleConfirm(e){
     e.preventDefault()
-    const formValueArr = Object.values(formData)
-    const isFilled = formValueArr.every(item => item !== "")
-    if(isFilled){
+    const formDataArr = Object.values(formData)
+    const isFilled = formDataArr.every(item => item !== "")
+    if(isFilled && defaultCardValue.cardName !== formData.cardName){
       setIsCardAdded(prevState => !prevState)
     }else{
       return;
