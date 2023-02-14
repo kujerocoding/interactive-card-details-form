@@ -89,11 +89,11 @@ const CardForm = () => {
               <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp;<span>
                 <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
-                  
                   <input className="form--month" 
                   name="expDateMonth"
                   id="expDateMonth" 
                   type="tel"
+                  pattern='/[\d]{2}/'
                   maxLength={2} 
                   placeholder='MM' 
                   onChange={handleChange}/>
@@ -101,6 +101,7 @@ const CardForm = () => {
                   <input className="form--year" 
                   name="expDateYear" 
                   type="tel" 
+                  pattern='/[\d]{4}/'
                   maxLength={4}
                   placeholder='YY'
                   onChange={handleChange}/>
@@ -108,6 +109,7 @@ const CardForm = () => {
                   name="cvc"
                   id="cvc"
                   type="tel" 
+                  pattern='/[\d]{3}/'
                   maxLength={3}
                   placeholder='e.g. 123'
                   onChange={handleChange}/>
