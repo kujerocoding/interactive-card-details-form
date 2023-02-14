@@ -25,9 +25,9 @@ const CardForm = () => {
     })
   }
 
+
   function handleConfirm(e){
     e.preventDefault()
-    console.log('shit')
     setIsCardAdded(prevState => !prevState)
   }
 
@@ -37,42 +37,59 @@ const CardForm = () => {
     setFormData(defaultCardValue)
   }
 
+  const regexCardNumber = /^[\d{4} ]{19}$/g
+
+  const isCardNumberValid = regexCardNumber.test(formData.cardNumber)
+
+  const style = {
+    border: isCardNumberValid ?  '1px solid #dedddf' : '1px solid red'
+  }
+
+ /*  const errorMessage = !isCardNumberValid && <p className='error--message'>Can't be blank</p> */
+
   const cardForm = (
     <form id="cardForm">
               <label htmlFor="cardName">CARDHOLDER NAME</label>
-              <input className="card--name"
-              name='cardName'  
-              id='cardName'  
-              type="text" 
-              placeholder='e.g. Jane Appleseed'
-              onChange={handleChange}/>
+                <input className="card--name"
+                name='cardName'  
+                id='cardName'  
+                type="text" 
+                placeholder='e.g. Jane Appleseed'
+                onChange={handleChange}
+                />
               <label htmlFor="cardNumber">CARD NUMBER</label>
-              <input className="card--number"  
-              name="cardNumber" 
-              id="cardNumber" 
-              type="number" 
-              placeholder='e.g. 1234 5678 9123 0000'
-              onChange={handleChange}/>
+                <input className="card--number"  
+                name="cardNumber" 
+                id="cardNumber" 
+                type="text" 
+                placeholder='e.g. 1234 5678 9123 0000'
+                onChange={handleChange}
+                maxLength={19}
+                style={style}/>
+                {!isCardNumberValid && <p className='error--message'>Wrong format, numbers only</p>}
               <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp;<span>
                 <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
-                <input className="form--month" 
-                name="expDateMonth"
-                id="expDateMonth" 
-                type="number" 
-                placeholder='MM' 
-                onChange={handleChange}/>
-                <input className="form--year" 
-                name="expDateYear" 
-                type="number" 
-                placeholder='YY'
-                onChange={handleChange}/>
-                <input className="form--cvc" 
-                name="cvc"
-                id="cvc"
-                type="number" 
-                placeholder='e.g. 123'
-                onChange={handleChange}/>
+                  <input className="form--month" 
+                  name="expDateMonth"
+                  id="expDateMonth" 
+                  type="tel"
+                  maxLength={2} 
+                  placeholder='MM' 
+                  onChange={handleChange}/>
+                  <input className="form--year" 
+                  name="expDateYear" 
+                  type="tel" 
+                  maxLength={4}
+                  placeholder='YY'
+                  onChange={handleChange}/>
+                  <input className="form--cvc" 
+                  name="cvc"
+                  id="cvc"
+                  type="tel" 
+                  maxLength={3}
+                  placeholder='e.g. 123'
+                  onChange={handleChange}/>
                 </div>     
         </form>
   )

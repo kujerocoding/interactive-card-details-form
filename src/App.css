@@ -9,7 +9,7 @@
 :root{
     --FF: 'Space Grotesk', sans-serif;
     --FS: 18px;
-    --LIGHTGRAYISHVIOLET: hsl(270, 3%, 87%);
+    --LIGHTGRAYISHVIOLET: #dedddf;
     --DARKGRAYISHGVIOLET: hsl(279, 6%, 55%);
     --VERYDARKVIOLET: hsl(278, 68%, 11%);
 }
@@ -173,6 +173,11 @@ button{
     margin-bottom: 20px;
     text-transform: uppercase;
     color: var(--VERYDARKVIOLET);
+}
+
+.error--message{
+    font-size: .9rem;
+    color: red;
 }
 
 @media (min-width: 40em){
