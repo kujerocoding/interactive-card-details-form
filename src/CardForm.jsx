@@ -6,9 +6,9 @@ const CardForm = () => {
   const defaultCardValue = {
     cardName: "Jane Appleseed",
     cardNumber: "1234 5678 9123 0000",
+    cvc: 123,
     expDateMonth: "01",
-    expDateYear: 2001,
-    cvc: 123
+    expDateYear: 2001
   }
 
   const [isCardAdded, setIsCardAdded] = useState(false)
@@ -55,51 +55,55 @@ const CardForm = () => {
     <form id="cardForm">
               <label htmlFor="cardName">CARDHOLDER NAME</label>
                 <input className="card--name"
-                name='cardName'  
                 id='cardName'  
-                type="text" 
-                placeholder='e.g. Jane Appleseed'
+                name='cardName'  
                 onChange={handleChange}
+                placeholder='e.g. Jane Appleseed'
+                type="text" 
                 />
                 {formData.cardName === "" && <p className='error--message'>Can't be blank</p>}
               <label htmlFor="cardNumber">CARD NUMBER</label>
                 <input className="card--number"  
-                name="cardNumber" 
                 id="cardNumber" 
-                type="text" 
-                placeholder='e.g. 1234 5678 9123 0000'
-                onChange={handleChange}
                 maxLength={19}
-                style={style}/>
+                name="cardNumber" 
+                onChange={handleChange}
+                placeholder='e.g. 1234 5678 9123 0000'
+                style={style}
+                type="text" 
+                />
                 {!isCardNumberValid && <p className='error--message'>Wrong format, numbers only</p>}
                 {formData.cardNumber === "" && <p className='error--message'>Can't be blank</p>}
               <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp; &emsp;<span>
                 <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
                   <input className="form--month" 
-                  name="expDateMonth"
                   id="expDateMonth" 
-                  type="tel"
-                  pattern='/[\d]{2}/'
                   maxLength={2} 
+                  name="expDateMonth"
+                  onChange={handleChange}
+                  pattern='/[\d]{2}/'
                   placeholder='MM' 
-                  onChange={handleChange}/>
+                  type="tel"
+                  />
                   
                   <input className="form--year" 
-                  name="expDateYear" 
-                  type="tel" 
-                  pattern='/[\d]{4}/'
                   maxLength={4}
+                  name="expDateYear" 
+                  onChange={handleChange}
+                  pattern='/[\d]{4}/'
                   placeholder='YY'
-                  onChange={handleChange}/>
-                  <input className="form--cvc" 
-                  name="cvc"
-                  id="cvc"
                   type="tel" 
-                  pattern='/[\d]{3}/'
+                  />
+                  <input className="form--cvc" 
+                  id="cvc"
                   maxLength={3}
+                  name="cvc"
+                  onChange={handleChange}
+                  pattern='/[\d]{3}/'
                   placeholder='e.g. 123'
-                  onChange={handleChange}/>
+                  type="tel" 
+                  />
                   
                 </div>
                 <div className='month-cvc--message--container'>
