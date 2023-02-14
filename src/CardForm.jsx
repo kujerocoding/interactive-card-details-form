@@ -138,7 +138,11 @@ const CardForm = () => {
       <div className='form--container'>
         {isCardAdded ? cardAdded : cardForm}
         <button type='submit' form='cardForm' onClick={isCardAdded ? handleContinue : handleConfirm}>{isCardAdded ? "Continue" : "Confirm"}</button>
+        <div className='attribution'>
+            <p>Challenge by <a href="https://www.frontendmentor.io/home" target="_blank">Frontend Mentor.</a> Coded by kujerocoding</p>
       </div>
+      </div>
+      
     </>
   )
 }
