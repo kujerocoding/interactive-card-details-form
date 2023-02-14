@@ -38,31 +38,11 @@ const CardForm = () => {
   }
 
   const regexCardNumber = /^[\d{4} ]{19}$/g
-  const regexCvc = /[\d]{3}/g
-
   const isCardNumberValid = regexCardNumber.test(formData.cardNumber)
-  const isCvcValid = regexCvc.test(formData.cvc)
-
-  //console.log(isCardNumberValid)
 
   const style = {
     border: isCardNumberValid ?  '1px solid #dedddf' : '1px solid red'
   }
-
- /*  const errorMessage = !isCardNumberValid && <p className='error--message'>Can't be blank</p> */
-
-
- //const shit = formData.map(item => item.cardNumber)
-
- //console.log(shit)
-
- /* for(const data in formData){
-  console.log(formData[data])
- } */
-
- console.log(formData.cardName)
-
-
 
   const cardForm = (
     <form id="cardForm">
@@ -86,7 +66,7 @@ const CardForm = () => {
                 style={style}/>
                 {!isCardNumberValid && <p className='error--message'>Wrong format, numbers only</p>}
                 {formData.cardNumber === "" && <p className='error--message'>Can't be blank</p>}
-              <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp;<span>
+              <label htmlFor="expDateMonth">EXP. DATE (MM/YY) &emsp; &emsp;<span>
                 <label htmlFor='cvc'>CVC</label></span></label>
                 <div className='form--lower'>
                   <input className="form--month" 

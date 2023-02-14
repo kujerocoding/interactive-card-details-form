@@ -53,6 +53,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-radius: 6px;
 }
 
 .card--front{
@@ -118,6 +119,8 @@ form{
 
 form > label{
     color: var(--VERYDARKVIOLET);
+    font-size: .9rem;
+    font-weight: bold;
 }
 
 form > input, form > div> input, button{
@@ -185,7 +188,7 @@ button{
     gap: 60px;
 }
 
-@media (min-width: 40em){
+@media (min-width: 75em){
     .main--container{
        display: flex;
     }
@@ -196,7 +199,8 @@ button{
        min-height: 100vh;
     }
 
-    .card--front, .card--back{  
+    .card--front, .card--back{ 
+        transition: transform 2s ease-in-out 1s;
         transform: scale(1.4);
     }
 
