@@ -38,8 +38,12 @@ const CardForm = () => {
   }
 
   const regexCardNumber = /^[\d{4} ]{19}$/g
+  const regexCvc = /[\d]{3}/g
 
   const isCardNumberValid = regexCardNumber.test(formData.cardNumber)
+  const isCvcValid = regexCvc.test(formData.cvc)
+
+  console.log(isCvcValid)
 
   const style = {
     border: isCardNumberValid ?  '1px solid #dedddf' : '1px solid red'
